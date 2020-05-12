@@ -1,0 +1,27 @@
+Check if you can reach all instances within the VPC
+
+sudo -s
+
+ifconfig
+
+route -n
+
+ping 8.8.8.8
+
+Mount an EBS volume
+
+sudo -s
+df -h  -> Check to see all available storage
+mkfs.ext4 /dev/xvdh - create a file system
+mkdir /data
+mount /dev/xvdh /data
+
+# Do this to mae sure the storage remains even after a restart
+vim /etc/fstab
+/dev/xvdh /data ext4 defaults 0 0
+
+unmount /data
+mount /data
+df -h
+
+
